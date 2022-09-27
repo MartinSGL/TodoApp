@@ -1,16 +1,12 @@
 import React from 'react'
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { BottomTab } from './src/navigator/TabNavigator';
-import { TodoProvider } from './src/contexts/TodoContext';
-import Loader from './src/components/Loader';
+import DrawerNavigator from './src/navigator/DrawerNavigator';
 
 const App = () => {
   return (
       <NavigationContainer>
-        <TodoProvider>
-          <BottomTab/>
-          <Loader/>
-        </TodoProvider>         
+          <DrawerNavigator/>
       </NavigationContainer>
   )
 }

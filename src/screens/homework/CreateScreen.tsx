@@ -21,7 +21,7 @@ const CreateScreen = () => {
 
         Alert.alert(
           "Information",
-          "The homework was saved successfuly",
+          "The task was saved successfuly",
           [
             {
               text: "Ok",
@@ -41,7 +41,7 @@ const CreateScreen = () => {
   return (
     <>
       <View style={styles.globalMargin}>
-        <Text style={styles.title}>Create Homework</Text>
+        <Text style={styles.title}>Create Task</Text>
         <View style={styles.hrHeader}/>
         <Image
           style={{width:200,height:200,alignSelf:'center'}}
@@ -51,7 +51,7 @@ const CreateScreen = () => {
         <View>
           <TextInput 
             style={styles.inputCreate} 
-            placeholder={'Write you homework'}
+            placeholder={'Write your task'}
             value={name}
             onChangeText={newText => setName(newText)}
           />

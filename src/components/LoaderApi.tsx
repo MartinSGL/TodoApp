@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { View,ActivityIndicator, StyleSheet } from 'react-native'
-import { TodoContext } from '../contexts/TodoContext';
+import { TodoContextApi } from '../contexts/TodoContextApi';
 
-const Loader = () => {
+const LoaderApi = () => {
 
-    const {isLoading} = useContext(TodoContext)
+    const {isLoading} = useContext(TodoContextApi)
 
     return (
             isLoading 
@@ -26,4 +26,4 @@ const loaderStyle = StyleSheet.create({
     }
 })
 
-export default Loader
+export default LoaderApi

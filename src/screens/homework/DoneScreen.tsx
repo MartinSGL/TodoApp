@@ -19,7 +19,7 @@ const DoneScreen = () => {
   const {todoState} = useContext(TodoContext)
   return (
     <View style={styles.globalMargin}>
-      <Text style={styles.title}>Work Done</Text>
+      <Text style={styles.title}>Task Done</Text>
       <View style={styles.hrHeader}/>
 
       {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(

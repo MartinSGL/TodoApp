@@ -16,7 +16,7 @@ const RowInProgress = ({name,id}:Homework) => {
 
         Alert.alert(
           "Information",
-          "The homework was done successfuly",
+          "The task was done successfuly",
           [
             {
               text: "Ok",
@@ -46,7 +46,7 @@ const InProgressScreen = () => {
 
   return (
     <View style={styles.globalMargin}>
-      <Text style={styles.title}>Work In Progress</Text>
+      <Text style={styles.title}>Task InProgress</Text>
       <View style={styles.hrHeader}/>
 
       {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(

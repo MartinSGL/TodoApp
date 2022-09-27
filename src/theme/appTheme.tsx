@@ -10,6 +10,25 @@ export const colores = {
 }
 
 export const styles = StyleSheet.create({
+    avatar:{
+        width:100,
+        height:100,
+        borderRadius:100
+    },
+    avatarContainer:{
+        alignItems:'center',
+        marginTop:20
+    },
+    menuContainer:{
+        marginVertical:30,
+        marginHorizontal:30
+    },
+    menuTexto:{
+        fontSize:20,
+    },
+    menuBoton:{
+        marginTop:10
+    },
     globalMargin:{
         marginHorizontal:20,
         marginTop:20,
