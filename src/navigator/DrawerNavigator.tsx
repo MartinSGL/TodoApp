@@ -14,8 +14,8 @@ const DrawerNavigator = () => {
     <Drawer.Navigator
         drawerContent={props => <MenuInterno {...props} />}
     >
-        <Drawer.Screen name="TabLocal" component={TabLocal} />
-        <Drawer.Screen name="TabApi" component={TabApi} /> 
+        <Drawer.Screen name="LocalApp" component={TabLocal} />
+        <Drawer.Screen name="ApiApp" component={TabApi} /> 
     </Drawer.Navigator>
   )
 }
@@ -40,18 +40,18 @@ const MenuInterno = ({navigation}:DrawerContentComponentProps) => {
           <View style={styles.menuContainer}>
               <TouchableOpacity 
                   style={styles.menuBoton}
-                  onPress={()=>navigation.navigate('TabLocal')}
+                  onPress={()=>navigation.navigate('LocalApp')}
               >
                   <Text style={styles.menuTexto}>
-                      <Icon name="tasks" size={20} color={colores.primary} />    TabLocal
+                      <Icon name="book-reader" size={20} color={colores.primary} />    LocalApp
                   </Text>     
               </TouchableOpacity>
               <TouchableOpacity 
                   style={styles.menuBoton}
-                  onPress={()=>navigation.navigate('TabApi')}
+                  onPress={()=>navigation.navigate('ApiApp')}
               >
                   <Text style={styles.menuTexto}>
-                      <Icon name="wrench" size={20} color={colores.primary} />    TabApi
+                      <Icon name="globe" size={20} color={colores.primary} />    ApiApp
                   </Text>     
               </TouchableOpacity>
           </View>
