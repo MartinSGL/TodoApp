@@ -1,5 +1,5 @@
 import React,{useContext, useEffect} from 'react'
-import { Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Homework, TodoContextApi } from '../../contexts/TodoContextApi';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -32,12 +32,12 @@ const DoneApiScreen = () => {
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Task Done</Text>
       <View style={styles.hrHeader}/>
-
-      {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
-        el.status==='Done' &&
-        <RowDone key={el._id} _id={el._id} name={el.name} status={el.status}/>
-      ))}
-
+      <ScrollView>
+        {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
+          el.status==='Done' &&
+          <RowDone key={el._id} _id={el._id} name={el.name} status={el.status}/>
+        ))}
+      </ScrollView>
     </View>
   )
 }

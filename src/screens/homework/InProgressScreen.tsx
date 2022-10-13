@@ -1,6 +1,6 @@
 import CheckBox from '@react-native-community/checkbox'
 import React, { useContext } from 'react'
-import { Text, View, Alert } from 'react-native'
+import { Text, View, Alert, ScrollView } from 'react-native'
 import { TodoContext } from '../../contexts/TodoContext'
 import { styles } from '../../theme/appTheme'
 import { Homework } from '../../contexts/TodoContext'
@@ -48,12 +48,12 @@ const InProgressScreen = () => {
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Task InProgress</Text>
       <View style={styles.hrHeader}/>
-
-      {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
-        el.status==='InProgress' &&
-        <RowInProgress key={el.id.toString()} id={el.id} name={el.name} status={el.status}/>
-      ))}
-
+      <ScrollView>
+        {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
+          el.status==='InProgress' &&
+          <RowInProgress key={el.id.toString()} id={el.id} name={el.name} status={el.status}/>
+        ))}
+      </ScrollView>
     </View>
   )
 }

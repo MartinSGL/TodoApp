@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import { Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import { Homework, TodoContext } from '../../contexts/TodoContext'
 import { styles } from '../../theme/appTheme'
 
@@ -21,12 +21,12 @@ const DoneScreen = () => {
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Task Done</Text>
       <View style={styles.hrHeader}/>
-
-      {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
-        el.status==='Done' &&
-        <RowDone key={el.id.toString()} id={el.id} name={el.name} status={el.status}/>
-      ))}
-
+      <ScrollView>
+         {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
+            el.status==='Done' &&
+            <RowDone key={el.id.toString()} id={el.id} name={el.name} status={el.status}/>
+          ))}
+      </ScrollView>
     </View>
   )
 }

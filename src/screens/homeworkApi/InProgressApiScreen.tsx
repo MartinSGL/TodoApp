@@ -3,6 +3,7 @@ import React, { useContext, useEffect} from 'react'
 import { Text, View } from 'react-native'
 import { styles } from '../../theme/appTheme'
 import { Homework, TodoContextApi } from '../../contexts/TodoContextApi';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const RowInProgress = ({name,_id}:Homework) => {
   const {doneHomework} = useContext(TodoContextApi)
@@ -30,12 +31,12 @@ const InProgressApiScreen = () => {
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Task InProgress</Text>
       <View style={styles.hrHeader}/>
-
-     {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
-        el.status==='InProgress' &&
-        <RowInProgress key={el._id} _id={el._id} name={el.name} status={el.status}/>
-      ))} 
-
+      <ScrollView>
+         {todoState.homeworks.length > 0 && todoState.homeworks.map((el)=>(
+            el.status==='InProgress' &&
+            <RowInProgress key={el._id} _id={el._id} name={el.name} status={el.status}/>
+          ))} 
+      </ScrollView>
     </View>
   )
 }

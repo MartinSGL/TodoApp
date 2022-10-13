@@ -20,15 +20,13 @@ export const todoReducer = (state:TodoState,action:TodoAction):TodoState =>{
                 ]
             }
         case 'done':{
-            let error:Homework = {id:-1,name:'error',status:'Done'}
-            let element:Homework = state.homeworks.find((el:Homework)=>el.id===action.payload) || error
-            let elements = state.homeworks.filter((el:Homework)=>el.id!==action.payload)
+
+            // let element = state.homeworks.find((el)=>el.id===action.payload)!
+            // let element = state.homeworks.find((el)=>el.id===action.payload) as Homework
+            // let elements = state.homeworks.filter((el)=>el.id!==action.payload)
 
             return {
-                homeworks:[
-                    ...elements,
-                    {...element,status:'Done'}
-                ]
+                homeworks:state.homeworks.map(el=>el.id===action.payload ? {...el,status:'Done'} :el)
             }
         }
         default:
