@@ -19,15 +19,19 @@ export const todoReducer = (state:TodoState,action:TodoAction):TodoState =>{
                 ]
             }
         case 'done':{
-            let error:Homework = {_id:'',name:'error',status:'Done'}
-            let element:Homework = state.homeworks.find((el:Homework)=>el._id===action.payload) || error
-            let elements = state.homeworks.filter((el:Homework)=>el._id!==action.payload)
+            // my way
+            // let error:Homework = {_id:'',name:'error',status:'Done'}
+            // let element:Homework = state.homeworks.find((el:Homework)=>el._id===action.payload) || error
+            // let elements = state.homeworks.filter((el:Homework)=>el._id!==action.payload)
+
+            // another possible way
+            // let element = state.homeworks.find((el)=>el.id===action.payload)!
+            // let element = state.homeworks.find((el)=>el.id===action.payload) as Homework
+            // let elements = state.homeworks.filter((el)=>el.id!==action.payload)
 
             return {
-                homeworks:[
-                    ...elements,
-                    {...element,status:'Done'}
-                ]
+                // ...elements,{...element,stutus:'Done'}
+                homeworks:state.homeworks.map(el=>el._id===action.payload ? {...el,status:'Done'} :el)
             }
         }
 
